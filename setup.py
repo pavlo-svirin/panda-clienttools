@@ -38,7 +38,9 @@ setup(
     py_modules=['pandaclienttools'],
     data_files=[
         # config and cron files
-        ('bin', ['scripts/bin/pansub', 'scripts/bin/panstat', 'scripts/bin/pankill' ]
+        ('bin', ['scripts/bin/pansub', 'scripts/bin/panstat', 'scripts/bin/pankill' ],
+        'scripts', ['scripts/spawner.py', 'scripts/create_yaml.sh', 'scripts/get_stat.py','scripts/kill_jobs.py', 'scripts/submitter.py' ],
+            'share', ['share/template_proposal.tmpl']
         ),],
     cmdclass={'install': install_panda_clienttools}
 )
