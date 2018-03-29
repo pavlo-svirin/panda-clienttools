@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[[ $# -eq 0 ]] && echo -e "Usage: pankill <panda_id1> <panda_id2> ...\n" && exit 1
+
+python ${VIRTUAL_ENV}/scripts/kill_jobs.py "$@"
