@@ -1,0 +1,25 @@
+name: job_{{seed}}_{{om}}
+
+variables:
+    nodes: "1"
+    walltime: "00:30:00"
+    om : "[0.3:0.5:0.1]"
+    seed : "[1:3]"
+    rafts : "['32', '36', '41']"
+
+command: |+
+    #!/bin/bash -l
+    #SBATCH --partition debug
+    #SBATCH --image=docker:slosar/desc_lss:v0.21
+    #SBATCH --nodes {{nodes}}
+    #SBATCH --time={{walltime}}
+    #SBATCH --job-name=CoLoRe_test_{{seed}}_{{om}}
+    #SBATCH -C haswell
+    #SBATCH --volume="/global/cscratch1/sd/psvirin/run_one_test:/predir;/global/cscratch1/sd/psvirin/run_one_test/test0-{{seed}}:/rundir"
+
+    #SBATCH -o /global/u2/p/psvirin/bin/LSST/app/tmp/payload_stdout.txt
+    #SBATCH -e /global/u2/p/psvirin/bin/LSST/app/tmp/payload_stderr.txt
+
+    export OMP_NUM_THREADS=64
+    gen_config {{seed}} {{om}}
+    srun -n {{nodes}} -c 64 shifter /home/lss/CoLoRe/runCoLoRe /rundir/param_files/param_colore_.cfg
