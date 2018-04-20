@@ -44,6 +44,8 @@ for j in o[1]:
         message = c(message_template).blue
     elif j.jobStatus=='sent' or j.jobStatus=='holding':
         message = c(message_template).yellow
+    elif j.jobStatus=='cancelled':
+        message = c(message_template).cyan
     else: # unknown
-        message = '%s: job does not exist'
+        message = '%s: job does not exist' % j.PandaID
     print(message)
