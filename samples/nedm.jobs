@@ -1,0 +1,18 @@
+name: nedm-test
+jobs:
+    job1:
+        walltime: "00:30:00"
+        nodes: 2
+        command: |+
+            #!/bin/bash
+            #PBS -A nph118
+            #PBS -N captures
+            #PBS -l nodes=2,walltime=30:00
+            #PBS -q debug
+
+            cd $PROJWORK/nph118/PanDAtest/Captures
+            #cd $PROJWORK/nph118/MDC_2017/Captures/
+            pwd
+            source /ccs/proj/nph118/scripts/G4DataPaths.sh
+
+            aprun -n 32 -N 16 /ccs/proj/nph118/nEDMSims/build-gcc/nEDMMeasurementCell/nEDMMeasurementCell_Capture /ccs/proj/nph118/scripts/PanDA_Tests/run_captureTest.mac

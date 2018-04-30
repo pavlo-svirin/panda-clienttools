@@ -1,0 +1,16 @@
+name: production-job-preparation
+
+variables:
+    num: "[582:584]"
+
+queuename: "ANALY_BNL_LOCAL_LQCD"
+walltime:  "00:30:00"
+name : "preparation_{{num}}"
+
+command: |+
+    /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_rasmus_charm/run_densl4812f21b6825m00161m0436_{{num}}.sh
+    # extracting dataset
+    mkdir /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_{{num}}
+    tar xf /hpcgpfs01/work/lqcd/thermoG/rlarsen/Cori_conf/conf_archive_l4812f21b6825m00161m0436_s418_s673_c1050_c3010_m02y18/_s{{num}}.tar -C /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_{{num}}
+    cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_{{num}}
+    mv _s{{num}}/* .

@@ -1,0 +1,10 @@
+name: pwnbcnodgnbthlgoyxao
+jobs:
+
+
+   job1: 
+        nodes: 1
+        walltime: "00:30:00"
+        queuename: "ANALY_BNL_LOCAL_LQCD"
+        command: |+
+            sleep 900            

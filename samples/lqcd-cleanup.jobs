@@ -1,0 +1,55 @@
+name: pwnbcnodgnbthlgoyxao
+jobs:
+
+   jobR1: 
+        nodes: 1
+        walltime: "00:30:00"
+        queuename: "ANALY_BNL_LOCAL_LQCD"
+        command: |+
+            rm -rf /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_573
+
+#  jobR2: 
+#       nodes: 1
+#       walltime: "00:30:00"
+#       queuename: "ANALY_BNL_LOCAL_LQCD"
+#       command: |+
+#           rm -rf /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_567
+#
+#  jobR3: 
+#       nodes: 1
+#       walltime: "00:30:00"
+#       queuename: "ANALY_BNL_LOCAL_LQCD"
+#       command: |+
+#           rm -rf /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_571
+
+
+   #jobR4: 
+        #nodes: 1
+        #walltime: "00:30:00"
+        #queuename: "ANALY_BNL_LOCAL_LQCD"
+        #command: |+
+            #rm -rf /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_564
+#
+#
+   #jobR5: 
+        #nodes: 1
+        #walltime: "00:30:00"
+        #queuename: "ANALY_BNL_LOCAL_LQCD"
+        #command: |+
+            #rm -rf /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_560
+#
+#
+   #jobR6: 
+        #nodes: 1
+        #walltime: "00:30:00"
+        #queuename: "ANALY_BNL_LOCAL_LQCD"
+        #command: |+
+            #rm -rf /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_559
+#
+#
+   #jobR7: 
+        #nodes: 1
+        #walltime: "00:30:00"
+        #queuename: "ANALY_BNL_LOCAL_LQCD"
+        #command: |+
+            #rm -rf /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_557

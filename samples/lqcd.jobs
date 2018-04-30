@@ -1,0 +1,397 @@
+name: mlmclxqsfilpeafhlpyk
+jobs:
+
+
+
+   job__job_582_1: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_582/Run1/Set1
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+   job__job_583_1: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_583/Run1/Set1
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+
+
+   job__job_582_2: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_582/Run1/Set2
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+   job__job_583_2: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_583/Run1/Set2
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+
+
+   job__job_582_3: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_582/Run1/Set3
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+   job__job_583_3: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_583/Run1/Set3
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+
+
+   job__job_582_4: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_582/Run1/Set4
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+   job__job_583_4: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_583/Run1/Set4
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+
+
+   job__job_582_5: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_582/Run1/Set5
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+   job__job_583_5: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_583/Run1/Set5
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+
+
+   job__job_582_6: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_582/Run1/Set6
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+   job__job_583_6: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_583/Run1/Set6
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+
+
+   job__job_582_7: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_582/Run1/Set7
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+   job__job_583_7: 
+        nodes: 1
+        walltime: "12:00:00"
+        queuename: "ANALY_BNL_IC_LQCD"
+        command: |+
+            #! /bin/bash
+            
+            #SBATCH -p long
+            #SBATCH --time=12:00:00
+            #SBATCH -A thermog
+            #SBATCH --nodes=1
+            #SBATCH --ntasks=1
+            #SBATCH --qos=normal
+            #SBATCH --gres=gpu:2
+            #SBATCH -C pascal
+            #SBATCH -J charmb6825nt12
+            
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_charm_b6825/densl4812f21b6825m00161m0436_583/Run1/Set7
+            
+            module load gcc/5.3.0
+            module load mvapich2
+            
+            srun gpu_dens do_arg dens_arg 10 trlan_arg
+            
+            
+
+
+
+sequence: 

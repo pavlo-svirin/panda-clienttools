@@ -1,0 +1,33 @@
+name: vdyfgldbkdofvyndpjdr
+jobs:
+
+
+   job__preparation_582: 
+        nodes: 1
+        walltime: "00:30:00"
+        queuename: "ANALY_BNL_LOCAL_LQCD"
+        command: |+
+            /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_rasmus_charm/run_densl4812f21b6825m00161m0436_582.sh
+            # extracting dataset
+            mkdir /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_582
+            tar xf /hpcgpfs01/work/lqcd/thermoG/rlarsen/Cori_conf/conf_archive_l4812f21b6825m00161m0436_s418_s673_c1050_c3010_m02y18/_s582.tar -C /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_582
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_582
+            mv _s582/* .
+            
+
+
+   job__preparation_583: 
+        nodes: 1
+        walltime: "00:30:00"
+        queuename: "ANALY_BNL_LOCAL_LQCD"
+        command: |+
+            /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/Nt12_rasmus_charm/run_densl4812f21b6825m00161m0436_583.sh
+            # extracting dataset
+            mkdir /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_583
+            tar xf /hpcgpfs01/work/lqcd/thermoG/rlarsen/Cori_conf/conf_archive_l4812f21b6825m00161m0436_s418_s673_c1050_c3010_m02y18/_s583.tar -C /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_583
+            cd /hpcgpfs01/work/lqcd/thermoG/rlarsen/charm_runs/conf_l4812f21b6825m00161m0436/l4812f21b6825m00161m0436_583
+            mv _s583/* .
+            
+
+
+sequence: 
