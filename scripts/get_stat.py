@@ -34,6 +34,8 @@ for j in sys.argv[1:]:
 o = Client.getJobStatus(jobs_to_query)
 
 for j in o[1]:
+    if j is None:
+        continue
     message_template = "%s: %s (%s): %s" % (j.PandaID, j.jobStatus, j.jobSubStatus, j.jobParameters)
     message = None
     if j.jobStatus=='finished':
@@ -49,3 +51,4 @@ for j in o[1]:
     else: # unknown
         message = '%s: job does not exist' % j.PandaID
     print(message)
+    print

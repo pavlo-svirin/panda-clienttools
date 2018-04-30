@@ -17,6 +17,7 @@ from taskbuffer.JobSpec import JobSpec
 from taskbuffer.FileSpec import FileSpec
 
 QUEUE_NAME = 'ANALY_BNL_IC_LQCD'
+#QUEUE_NAME = 'ANALY_BNL_LOCAL_LQCD'
 VO = 'lqcd'
 
 
@@ -35,7 +36,7 @@ class SequentialLQCDSubmitter:
 		self.site = site
 		self.vo = vo
 
-	def createJob(self, name, nodes, walltime, command, inputs = None):
+	def createJob(self, name, nodes, walltime, command, inputs = None, queuename = None):
 		job = JobSpec()
 		job.jobDefinitionID   = int(time.time()) % 10000
 		job.jobName           = "%s" % commands.getoutput('uuidgen')
@@ -46,7 +47,7 @@ class SequentialLQCDSubmitter:
 		job.destinationSE     = self.destName
 		job.currentPriority   = self.currentPriority
 		job.prodSourceLabel   = self.prodSourceLabel
-		job.computingSite     = self.site
+		job.computingSite     = self.site if queuename is None else queuename
 
 		lqcd_command = {
 				"nodes" : nodes,
@@ -182,8 +183,12 @@ for jobname, descr in jobdef['jobs'].items():
 	if 'sequence' in jobdef and jobdef['sequence'] is not None:
 		if jobname in jobdef['sequence']:
 			outputs = jobdef['sequence'][jobname]
+        qname = None
+        if 'queuename' in descr:
+            qname = descr['queuename']
+
 	#print jobname
-	job = sls.createJob(name=jobname, walltime=descr['walltime'], command=descr['command'], nodes=descr['nodes'], inputs=None)
+	job = sls.createJob(name=jobname, walltime=descr['walltime'], command=descr['command'], nodes=descr['nodes'], inputs=None, queuename=qname)
 	#print(job)
 	#print '===============\n'
 	sls.addJob(jobname, job, outputs) 

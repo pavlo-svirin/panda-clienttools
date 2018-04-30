@@ -53,6 +53,18 @@ env = Environment()
 tmpl = env.parse(template_data['command'])
 expected_vars = meta.find_undeclared_variables(tmpl)
 
+queuename = ''
+if 'queuename' in template_data:
+    queuename = template_data['queuename']
+
+walltime =''
+if 'walltime' in template_data:
+    walltime = template_data['walltime']
+
+name  =''
+if 'name' in template_data:
+    name = template_data['name']
+
 for k,v in template_data['variables'].iteritems():
     if k in expected_vars:
         # read variables list
@@ -102,7 +114,7 @@ if any(var_sets_difference):
     print(c("Not all variables defined, missing: %s" % ", ".join(var_sets_difference)).red)
     exit(1)
 
-print("All variables have been defined, generating jobs")
+# print("All variables have been defined, generating jobs")
 
 template_data['command'] = '            ' + template_data['command'].replace("\n", "\n            ")
 
@@ -112,7 +124,18 @@ after_literals_rendered = template.render(**literals)
 
 jobs = []
 
-after_literals_rendered = "   job{{loop.index}}: |+\n        nodes: 1\n        walltime: \"00:30:00\"\n        command: \n%s\n" % after_literals_rendered
+if walltime<>'':
+    walltime = 'walltime: "%s"' % walltime
+
+if queuename<>'':
+    queuename = 'queuename: "%s"' % queuename
+
+if name=='':
+    name = 'job_{{loop.index}}'
+
+#after_literals_rendered = "   job{{loop.index}}: \n        nodes: 0\n        walltime: \"00:30:00\"\n        command: |+\n%s\n" % after_literals_rendered
+#after_literals_rendered = "   job__{{loop.index}}: \n        nodes: 1\n        %s\n        %s\n        command: |+\n%s\n" % (walltime, queuename, after_literals_rendered)
+after_literals_rendered = "   job__%s: \n        nodes: 1\n        %s\n        %s\n        command: |+\n%s\n" % (name, walltime, queuename, after_literals_rendered)
 
 for k,v in arrays.iteritems():
     #after_literals_rendered = "{%% for %s in %s %%}\n   job{{loop.index}}: |+\n%s\n{%% endfor %%}" % (k, v, after_literals_rendered)
