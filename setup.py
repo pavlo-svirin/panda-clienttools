@@ -21,26 +21,26 @@ class install_panda_clienttools(install_org):
 
 setup(
     name = "panda-clienttools",
-    version = "0.0.1",
+    version = "0.0.3",
     author = "Pavlo Svirin",
     author_email = "psvirin@bnl.gov",
     description = ("Client tools to be used for job submissions for non-HEP PanDA customers"),
     license = "BSD",
     keywords = "PanDA",
     url = "http://packages.python.org/an_example_pypi_project",
-    packages=['pandaclienttools'],
+    packages=['panda-clienttools'],
     long_description=read('README'),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Topic :: Utilities",
         "License :: OSI Approved :: BSD License",
     ],
-    py_modules=['pandaclienttools'],
+#    py_modules=['panda-clienttools'],
     data_files=[
         # config and cron files
-        ('bin', ['scripts/bin/pansub', 'scripts/bin/panstat', 'scripts/bin/pankill' ],
-        'scripts', ['scripts/spawner.py', 'scripts/create_yaml.sh', 'scripts/get_stat.py','scripts/kill_jobs.py', 'scripts/submitter.py' ],
-            'share', ['share/template_proposal.tmpl']
-        ),],
+        ('bin', ['scripts/bin/pansub', 'scripts/bin/panstat', 'scripts/bin/pankill']),
+        ('scripts', ['scripts/spawner.py', 'scripts/create_yaml.sh', 'scripts/get_stat.py','scripts/kill_jobs.py', 'scripts/submitter.py']),
+        ('share', ['share/template_proposal.tmpl'])
+     ],
     cmdclass={'install': install_panda_clienttools}
 )
