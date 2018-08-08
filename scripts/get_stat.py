@@ -36,7 +36,7 @@ o = Client.getJobStatus(jobs_to_query)
 for j in o[1]:
     if j is None:
         continue
-    message_template = "%s: %s (%s): %s" % (j.PandaID, j.jobStatus, j.jobSubStatus, j.jobParameters)
+    message_template = "%s: %s (%s): %s %s" % (j.PandaID, j.jobStatus, j.jobSubStatus, j.jobParameters, j.cmtConfig)
     message = None
     if j.jobStatus=='finished':
         message = c(message_template).green
@@ -48,7 +48,11 @@ for j in o[1]:
         message = c(message_template).yellow
     elif j.jobStatus=='cancelled':
         message = c(message_template).cyan
+    elif j.jobStatus=='defined':
+        message = c(message_template).cyan
+    elif j.jobStatus=='activated':
+        message = c(message_template).cyan
     else: # unknown
-        message = '%s: job does not exist' % j.PandaID
+        message = '%s: job does not exist or status=%s' % (j.PandaID, j.jobStatus)
     print(message)
     print

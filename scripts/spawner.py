@@ -79,7 +79,8 @@ for k,v in template_data['variables'].iteritems():
                 else:
                     print(c("Ignoring empty  declaration of %s" % v).magenta)
             else:
-                literals[k] = x
+                #literals[k] = x
+                literals[k] = [x]
             vars_used.add(k)
         except SyntaxError:
             range_match = re.search(range_re, v)

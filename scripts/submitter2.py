@@ -187,7 +187,7 @@ for jobname, descr in jobdef['jobs'].items():
 		if jobname in jobdef['sequence']:
                     for jn in jobdef['sequence'][jobname].split(','):
 			#outputs.append(jobdef['sequence'][jobname])
-			outputs.append(jn)
+			outputs.append(jn.strip())
         qname = None
         if 'queuename' in descr:
             qname = descr['queuename']
@@ -200,7 +200,7 @@ for jobname, descr in jobdef['jobs'].items():
 
 print(sls)	
 
-#print("Now submitting")
+print("Now submitting")
 sls.submit()
 
 sys.exit(0)
