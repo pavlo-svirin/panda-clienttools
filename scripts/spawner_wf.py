@@ -10,6 +10,7 @@ import numpy as np
 from termcolor2 import c
 import random
 import string
+import copy
 
 #RANGE_RE = "\[(\d+):(\d+)(:(\d+))?\]"
 RANGE_RE = '\[(\-?\d+(\.\d+)?):(\-?\d+(\.\d+)?)(:(\-?\d+(\.\d+)?))?\]'
@@ -75,7 +76,7 @@ for j,k in template_data['sequence'].iteritems():
     tmpl = env.parse(k)
     expected_vars.update(meta.find_undeclared_variables(tmpl))
 
-#print(expected_vars)
+#sys.stderr.write(str(jobs))
 
 
 #tmpl = env.get_template(filename)
@@ -146,6 +147,7 @@ for k,v in template_data['variables'].iteritems():
                 print(c("Ignoring array declaration %s as it produces empty sequence" % v).magenta)
 
 var_sets_difference = expected_vars-vars_used
+
 if any(var_sets_difference):
     print(c("Not all variables defined, missing: %s" % ", ".join(var_sets_difference)).red)
     exit(1)
@@ -154,28 +156,38 @@ dst_output['name'] = template_data['name']
 dst_output['sequence'] = {}
 dst_output['jobs'] = {}
 
+#sys.stderr.write(str(jobs))
+
 import itertools
-options = {"number": [1,2,3], "color": ["orange","blue"] }
+#options = {"number": [1,2,3], "color": ["orange","blue"] }
 product = [x for x in apply(itertools.product, arrays.values())]
 kv = [dict(zip(arrays.keys(), p)) for p in product]
 
 for k in kv:
+    #sys.stderr.write(str(k))
     for j,v in jobs.iteritems():
         template = Template(j, undefined=DebugUndefined)
         name = template.render(**k)
+        #sys.stderr.write(str(k) + '\n\n')
         template = Template(v['command'], undefined=DebugUndefined)
         command = template.render(**k)
-        dst_output['jobs'][name] = v
+        #sys.stderr.write(str(jobs) + '\n\n')
+        #sys.stderr.write(str(command) + '\n\n')
+        #sys.stderr.write(str(name) + '\n\n')
+        dst_output['jobs'][name] = copy.deepcopy(v)
         dst_output['jobs'][name]['command'] = command
+
     for s,v in sequence.iteritems():
         template = Template(s, undefined=DebugUndefined)
         name = template.render(**k)
         template = Template(v, undefined=DebugUndefined)
         nextjob = template.render(**k)
         dst_output['sequence'][name] = nextjob
+    #sys.stderr.write('=========')
 
 #import pprint
-#pprint.pprint(dst_output)
+#pprint.pprint(dst_output, stream=sys.stderr)
+#pprint.pprint(jobs, stream=sys.stderr)
 
 print yaml.dump(dst_output)
 
