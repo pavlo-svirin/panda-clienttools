@@ -21,7 +21,7 @@ class install_panda_clienttools(install_org):
 
 setup(
     name = "panda-clienttools",
-    version = "0.0.3",
+    version = "0.0.5",
     author = "Pavlo Svirin",
     author_email = "psvirin@bnl.gov",
     description = ("Client tools to be used for job submissions for non-HEP PanDA customers"),
