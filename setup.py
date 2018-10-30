@@ -39,7 +39,7 @@ setup(
     data_files=[
         # config and cron files
         ('bin', ['scripts/bin/pansub', 'scripts/bin/pansub2', 'scripts/bin/panstat', 'scripts/bin/pankill']),
-        ('scripts', ['scripts/spawner.py', 'scripts/retry-jobs.py', 'scripts/spawner_wf.py', 'scripts/create_yaml.sh', 'scripts/get_stat.py','scripts/kill_jobs.py', 'scripts/submitter.py',  'scripts/submitter2.py', 'scripts/graph-easy.pl']),
+        ('scripts', ['scripts/spawner.py', 'scripts/retry_jobs.py', 'scripts/spawner_wf.py', 'scripts/create_yaml.sh', 'scripts/get_stat.py','scripts/kill_jobs.py', 'scripts/submitter.py',  'scripts/submitter2.py', 'scripts/graph-easy.pl']),
         ('share', ['share/template_proposal.tmpl'])
      ],
     cmdclass={'install': install_panda_clienttools}
